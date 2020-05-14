@@ -25,7 +25,6 @@ public class Registration : MonoBehaviour
         form.AddField("email", emailField.text);
         form.AddField("password", passwordField.text);
 
-
         UnityWebRequest www = UnityWebRequest.Post("http://localhost/sqlconnect/register.php", form);
         yield return www.SendWebRequest();
 
@@ -33,7 +32,6 @@ public class Registration : MonoBehaviour
             Debug.Log("Erro no registro" + www.error);
         }
         else {
-            Debug.Log(www.downloadHandler.text);
             Debug.Log("Registro Efetuado com Sucesso!");
             SceneManager.LoadScene(0);
         }

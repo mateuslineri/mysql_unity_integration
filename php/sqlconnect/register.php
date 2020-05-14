@@ -1,10 +1,6 @@
 <?php
-$con = mysqli_connect('localhost', 'root', '', 'unitymysql');
-
-if (mysqli_connect_error()) {
-  echo ("Error -> Connection Error (error code #1)");
-  exit();
-}
+include_once("utils.php");
+$con = DBconnect();
 
 $username = $_POST['username'];
 $email = $_POST['email'];
